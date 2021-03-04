@@ -1,0 +1,9 @@
+{
+     "name": "Pagerr",
+     "description": "Signalling server for Pagerr",
+     "version": "1.0.0",
+     "dependencies": {
+          "express": "",
+          "socket.io": "^2.3.0"
+     }
+}

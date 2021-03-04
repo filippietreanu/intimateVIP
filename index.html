@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon.png" />
+  <link rel="stylesheet" href="css/fa.min.css" />
+  <link rel="stylesheet" href="css/toastr.min.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/theme.css" />
+<body>
+  <section class="start py-7 py-md-0" id="home">
+    <div class="container">
+      <div class="row vh-md-100">
+        <div class="col-md-8 col-sm-10 col-12 mx-auto my-auto text-center">
+          <h2 class="heading-black text-capitalize">
+              VIP Live Video Call
+            </h2>
+          <form id="start-form">
+            <div class="form-group">
+              <input type="text" id="name" class="form-control" placeholder="Enter your name" maxlength="10" autofocus required /> </div>
+            <div class="form-group">
+              <input type="text" id="room" class="form-control" placeholder="Enter room name" maxlength="10" required /> </div>
+            <div class="custom-control custom-checkbox">
+              <input type="checkbox" class="custom-control-input" id="muteVideo" />
+              <label class="custom-control-label" for="muteVideo">Mute Video</label>
+            </div>
+            <br />
+            <button id="start-btn" type="submit" class="btn btn-primary flex-row align-items-center"> Go! </button>
+          </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="room_info">
+      <span id="roomName" class="text-center"></span>
+      <span id="timer" class="text-center"></span>
+    </div>
+
+    <!-- chat panel starts here -->
+    <div class="chat_panel">
+      <div class="chat_box">
+        <div class="chat_header">
+          Messenger
+          <i class="fas fa-times close_option"></i>
+        </div>
+        <div class="chat_body">
+          <div class="empty_chat_body">
+            <img src="images/chat.png" class="chat_icon_show" alt="Messanger" />
+          </div>
+        </div>
+        <div class="chat_footer">
+          <form id="messengerForm">
+            <div class="input-group">
+              <input
+                type="text"
+                id="messageInput"
+                class="form-control note_input"
+                placeholder="Type a message"
+                autocomplete="off"
+              />
+              <div class="input-group-append">
+                <button
+                  id="sendMessage"
+                  class="btn btn-outline-secondary"
+                  type="submit"
+                  title="Send"
+                >
+                  <i class="far fa-paper-plane"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- chat panel ends here -->
+
+    <div class="local_video_section">
+      <a class="navbar-brand heading-black call_logo" href="/">
+        <img src="images/logo.png" height="50" width="240" alt="IntimateVIP">
+      </a>
+          <video id="localVideo" autoplay playsinline></video> <span class="local_video_name"></span> </div>
+        <div class="remote_video_section">
+          <video id="remoteVideo" autoplay playsinline muted></video> <span class="remote_video_name"></span> </div>
+        <div class="callOptions">
+          <button class="btn action_opt_btn chat_option" title="Messenger" id="openMessenger"> <i class="far fa-comment-alt"></i> </button>
+          <button class="btn action_opt_btn" title="Share Link" id="share"> <i class="fas fa-share-alt"></i> </button>
+          <button class="btn action_opt_btn" title="Toggle Mic" id="toggleMic"> <i class="fas fa-microphone-slash"></i> </button>
+          <button class="btn btn-danger" title="Hangup" id="hangup"> <i class="fas fa-phone"></i> </button>
+          <button class="btn action_opt_btn" title="Toggle Video" id="toggleVideo"> <i class="fas fa-video-slash"></i> </button>
+          <button class="btn action_opt_btn" title="Toggle Camera" id="toggleCam"> <i class="fas fa-camera"></i> </button>
+          <button class="btn action_opt_btn" title="Picture-in-picture Mode" id="pip"> <i class="fab fa-product-hunt"></i> </button>
+          <button class="btn action_opt_btn" title="ScreenShare" id="screenShare"> <i class="fa fa-desktop"></i> </button>
+        </div>
+        <script src="js/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/socket.io.js"></script>
+        <script src="js/toastr.min.js"></script>
+        <script src="js/easytimer.min.js"></script>
+        <script src="js/config.js"></script>
+        <script src="js/adapter.js"></script>
+        <script src="js/main.min.js"></script>
+        <script src="js/feather.min.js"></script>
+        <script>
+          feather.replace();
+        </script>
+</body>
+
+</html>
